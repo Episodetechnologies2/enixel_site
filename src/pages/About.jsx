@@ -1,20 +1,28 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Play, X, ArrowUpRight } from 'lucide-react'
+import { 
+  Play, 
+  X, 
+  ArrowUpRight, 
+  ShoppingCart, 
+  Rocket, 
+  Store, 
+  HeartPulse, 
+  Home, 
+  Coffee 
+} from 'lucide-react'
 import { FaLinkedin } from 'react-icons/fa'
 import AboutSection from '../sections/About'
 
-// Partners data for the Loved By marquee
+// Industries/Partners data for the Loved By marquee
 const partners = [
-  { name: 'Vireon', logo: 'https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/68509384881ebc0cc7a13e3d_vireon-icon-digigrowth-webflow-template.svg' },
-  { name: 'Linkora', logo: 'https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/68509384237c5517dc148e3a_linkora-icon-digigrowth-webflow-template.svg' },
-  { name: 'Converra', logo: 'https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/685093841c17f3dadadf7c93_converra-icon-digigrowth-webflow-template.svg' },
-  { name: 'Nexora', logo: 'https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/6850938451f4de0cc662d6c1_nexora-icon-digigrowth-webflow-template.svg' },
-  { name: 'Syncell', logo: 'https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/6850938401c5043bfa928b39_syncell-icon-digigrowth-webflow-template.svg' },
-  { name: 'Socium', logo: 'https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/6850938480df25920b74db67_socium-icon-digigrowth-webflow-template.svg' },
-  { name: 'Bridgr', logo: 'https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/68509384499677219eff878d_bridgr-icon-digigrowth-webflow-template.svg' },
-  { name: 'Netspire', logo: 'https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/6850938d8c6bdfd98c0bcb2a_netspire-icon-digigrowth-webflow-template.svg' }
+  { name: 'E-commerce', icon: ShoppingCart },
+  { name: 'SaaS & Startups', icon: Rocket },
+  { name: 'Local Businesses', icon: Store },
+  { name: 'Healthcare', icon: HeartPulse },
+  { name: 'Real Estate', icon: Home },
+  { name: 'Hospitality', icon: Coffee }
 ]
 
 // Team members data
@@ -69,34 +77,34 @@ const teamMembersBottom = [
 // Core Values data
 const coreValues = [
   {
-    name: 'Accuracy',
+    name: 'Precision',
     icon: 'https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/684c502e6b3c2c90903e43c1_accuracy-digigrowth-webflow-template.png',
-    desc: 'Ornare leo pulvinar lobortis purus mauris massa nulla velit sagittis faucibus ipsum viverra congue mi.'
+    desc: 'We make decisions based on real data and performance numbers, not assumptions.'
   },
   {
-    name: 'Innovation',
+    name: 'Adaptability',
     icon: 'https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/684c502e27825511c4af6630_innovation-digigrowth-webflow-template.png',
-    desc: 'Ornare leo pulvinar lobortis purus mauris massa nulla velit sagittis faucibus ipsum viverra congue mi.'
+    desc: 'Search and social platforms change constantly. We stay on top of it so your strategy doesn’t fall behind.'
   },
   {
     name: 'Speed',
     icon: 'https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/684c502ee0e607c045259c6c_speed-digigrowth-webflow-template.png',
-    desc: 'Ornare leo pulvinar lobortis purus mauris massa nulla velit sagittis faucibus ipsum viverra congue mi.'
+    desc: 'Campaigns move fast. We execute quickly without cutting corners on quality.'
   },
   {
-    name: 'Excellence',
+    name: 'Craft',
     icon: 'https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/684c502ef8febf6f1383722d_excellence-digigrowth-webflow-template.png',
-    desc: 'Ornare leo pulvinar lobortis purus mauris massa nulla velit sagittis faucibus ipsum viverra congue mi.'
+    desc: 'We hold our own work to a high bar, on every project, every time.'
   },
   {
-    name: 'Efficiency',
+    name: 'ROI-Driven',
     icon: 'https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/684c502e858148c5436697bd_efficiency-digigrowth-webflow-template.png',
-    desc: 'Ornare leo pulvinar lobortis purus mauris massa nulla velit sagittis faucibus ipsum viverra congue mi.'
+    desc: 'Your budget matters. We make sure it\'s spent where it actually drives results.'
   },
   {
     name: 'Communication',
     icon: 'https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/684c50341feb252e84a639b2_communication-digigrowth-webflow-template.png',
-    desc: 'Ornare leo pulvinar lobortis purus mauris massa nulla velit sagittis faucibus ipsum viverra congue mi.'
+    desc: 'You’ll always know what we’re working on, what’s working, and what\'s next.'
   }
 ]
 
@@ -146,20 +154,21 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="lg:col-span-6 bg-white p-8 sm:p-10 md:p-14 rounded-custom-lg shadow-premium max-w-[480px] w-full"
+            className="lg:col-span-6 bg-white p-8 sm:p-10 md:p-14 rounded-custom-lg shadow-premium max-w-[580px] w-full"
           >
             <h1 className="text-3xl sm:text-4xl lg:text-[46px] font-bold leading-[1.1] text-navy mb-4 tracking-tight text-balance">
-              Learn more about our marketing agency
+              More than a marketing agency. We’re your growth partner.
+
             </h1>
             <p className="text-[15px] text-neutral-600 mb-8 leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur neque blandit sit iaculis rhoncus in ac volutpat a tortor nulla donec dui at.
+              Enixel Digital works with businesses to grow through SEO, social media, content marketing, and performance-driven digital strategies. We don’t just increase your online presence - we help you attract the right audience, build trust, and turn attention into business growth.
             </p>
             <div>
               <a 
                 href="#open-positions" 
                 className="inline-flex items-center justify-center px-8 py-3.5 rounded-full font-bold text-[15px] text-white bg-neutral-900 hover:bg-neutral-800 transition-colors duration-300 shadow-premium"
               >
-                Join our team
+                Get in touch
               </a>
             </div>
           </motion.div>
@@ -210,47 +219,50 @@ export default function AboutPage() {
           {/* Text Right */}
           <div className="lg:col-span-6 max-w-[500px]">
             <h2 className="text-3xl md:text-[38px] font-bold text-navy mb-4 leading-tight">
-              Cultivating a space where voices thrive
+              Every successful brand starts with a clear direction.
             </h2>
             <p className="text-[15px] text-neutral-600 mb-8 leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur in sagittis ante mattis cursus dictumst aliquam convallis ut nam est donec et.
+              Enixel was created with one simple vision - to help businesses navigate the fast-changing digital world with confidence.
             </p>
             <div className="flex flex-wrap gap-4">
               <a 
                 href="#open-positions"
                 className="inline-flex items-center justify-center px-6 py-3 rounded-full font-bold text-[14px] border border-neutral-300 text-neutral-800 hover:bg-neutral-50 hover:border-neutral-400 transition-colors duration-300"
               >
-                Join our team
+                Get in touch
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 3. USED AND LOVED BY MARQUEE */}
+      {/* 3. INDUSTRIES WE SERVE MARQUEE */}
       <section className="py-16 bg-[#f8f9fa] border-y border-neutral-200/50 overflow-hidden w-full">
         <div className="max-w-[1256px] mx-auto px-6 mb-8 text-center">
           <p className="text-xs uppercase tracking-widest text-neutral-500 font-bold">
-            Used and loved by
+            Industries we serve
           </p>
         </div>
         <div className="flex overflow-hidden relative w-full">
           <div className="marquee-scroll flex items-center space-x-16 pr-16 select-none">
-            {[...partners, ...partners, ...partners].map((p, idx) => (
-              <div 
-                key={idx} 
-                className="flex items-center space-x-3 text-neutral-500 hover:text-navy transition-colors duration-300 shrink-0"
-              >
-                <img src={p.logo} alt={p.name} className="h-[38px] w-auto opacity-70 hover:opacity-100 transition-opacity duration-200" />
-                <span className="text-[17px] font-semibold text-neutral-800 tracking-tight">{p.name}</span>
-              </div>
-            ))}
+            {[...partners, ...partners, ...partners].map((p, idx) => {
+              const Icon = p.icon;
+              return (
+                <div 
+                  key={idx} 
+                  className="flex items-center space-x-3 text-neutral-500 hover:text-navy transition-colors duration-300 shrink-0 group"
+                >
+                  <Icon className="w-[24px] h-[24px] text-neutral-400 group-hover:text-navy transition-colors duration-300 shrink-0" />
+                  <span className="text-[17px] font-semibold text-neutral-800 tracking-tight">{p.name}</span>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
 
       {/* 4. MISSION STATEMENT (Reusing scroll-animated component) */}
-      <div className="py-12 md:py-20 px-6 max-w-[1256px] mx-auto w-full">
+      <div className="py-12 md:py-20 ">
         <AboutSection />
       </div>
 
@@ -260,12 +272,12 @@ export default function AboutPage() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-14 gap-6">
           <div className="max-w-[500px]">
             <h2 className="text-3xl md:text-[40px] font-bold text-navy leading-tight">
-              Meet the growing team behind us
+              Meet the people behind Enixel
             </h2>
           </div>
           <div className="max-w-[380px]">
             <p className="text-[15px] text-neutral-600 leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur neque blandit sit iaculis rhoncus in ac volutpat a tortor nulla donec et dui at posuere.
+              A small, hands-on team that treats every client’s growth like it's our own business.
             </p>
           </div>
         </div>
@@ -405,10 +417,10 @@ export default function AboutPage() {
       <section className="py-20 md:py-28 px-6 bg-[#f9f9f9] rounded-b-[40px] md:rounded-b-[64px] max-w-[1256px] mx-auto w-full border border-neutral-200/50">
         <div className="max-w-[940px] mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-[38px] font-bold text-navy mb-4">
-            What guides every step we take
+            The values that shape every strategy
           </h2>
           <p className="text-[15px] text-neutral-600 leading-relaxed max-w-[700px] mx-auto">
-            Lorem ipsum dolor sit amet consectetur amet arcu proin nulla posuere ac suspendisse a diam neque sapien gravida fermentum ullamcorper ultrices in non tellus commodo donec.
+            These aren’t just words on a page - they’re how we actually work with clients, day to day.
           </p>
         </div>
 
@@ -546,10 +558,10 @@ export default function AboutPage() {
           {/* Right Follow Us Content */}
           <div className="lg:col-span-6 text-center lg:text-left max-w-[500px]">
             <h2 className="text-3xl md:text-[38px] font-bold text-navy mb-4 leading-tight">
-              Follow our journey on social media
+              Stay Connected With Enixel
             </h2>
             <p className="text-[15px] text-neutral-600 leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur neque blandit sit iaculis rhoncus in ac volutpat a tortor.
+             We share marketing insights, client wins, and what we are learning as we grow - follow along on the platforms you see most.
             </p>
           </div>
         </div>

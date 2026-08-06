@@ -21,7 +21,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-2xl md:text-4xl lg:text-[34px] font-semibold leading-tight text-neutral-950 mb-2 tracking-tight text-balance"
           >
-            Your new dedicated growth team
+            Marketing that creates Momentum
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 30 }}
@@ -29,7 +29,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-[14px] md:text-md text-neutral-600 mb-8 max-w-[500px]"
           >
-            Lorem ipsum dolor sit amet consectetur neque blandit sit iaculis rhoncus in ac volutpat a tortor nulla donec.
+            Drive results through search, content, social media, and performance marketing.
           </motion.p>
           <motion.div 
             initial={{ opacity: 0, y: 30 }}

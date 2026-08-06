@@ -4,49 +4,79 @@ import { motion } from 'framer-motion'
 
 const services = [
   {
-    title: "Social media advertising",
-    description: "Lorem ipsum dolor sit ammet consectetur cras in fringilla integer nam in morbi augue laoreet.",
-    items: ["PPC / SEM", "Display Advertising", "Facebook & Google Advertising"],
+    title: "SEO / GEO / AEO",
+    description:
+      "Boost your visibility across traditional search engines, AI-generated results, and answer engines with strategies designed for how people search today.",
+    items: [
+      "SEO Audits & Strategy",
+      "GEO & AEO Optimization",
+      "Keyword Research"
+    ],
     image: "https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/689f64fbe7acb5c606d5448f_social-media-advertising-card-image-digigrowth-webflow-template.png",
     gradient: "https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/68a3677c591e6558d0a8dc5e_social-media-advertising-card-image-gradient-digigrowth-webflow-template.png",
     check: "https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/684c83cd39b500e1d9872058_pink-check-digigrowth-webflow-template.svg"
   },
   {
-    title: "SEO optimization",
-    description: "Lorem ipsum dolor sit ammet consectetur cras in fringilla integer nam in morbi augue laoreet.",
-    items: ["SEO Audits", "SEO Strategy & Coaching", "Page Speed Optimization"],
+    title: "Digital Marketing",
+    description:
+      "Build a stronger digital presence across every channel with data-driven marketing strategies that increase brand awareness and drive measurable business growth.",
+    items: [
+      "Brand Awareness Campaigns",
+      "Multi-Channel Execution",
+      "Performance Tracking & Reporting"
+    ],
     image: "https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/689f681fb5ba1977065f1709_seo-optimization-card-image-digigrowth-webflow-template.png",
     gradient: "https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/68a3677cd1fd053362f265da_seo-optimization-card-image-gradient-digigrowth-webflow-template.png",
     check: "https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/684c83ce821634441d5cf397_orange-check-digigrowth-webflow-template.svg"
   },
   {
-    title: "Advanced analytics",
-    description: "Lorem ipsum dolor sit ammet consectetur cras in fringilla integer nam in morbi augue laoreet.",
-    items: ["Goals & Targets Setup", "User Analytics", "Heat Map Analytics"],
+    title: "Content Management",
+    description:
+      "Create and manage consistent, high-quality content that strengthens your brand, engages your audience, and supports every stage of the customer journey.",
+    items: [
+      "Website Content Management",
+      "Content Planning & Publishing",
+      "Brand Messaging & Copywriting"
+    ],
     image: "https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/689f64fb49c5e52c54530752_advanced-analytics-card-image-digigrowth-webflow-template.png",
     gradient: "https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/68a367fc222bd7047524ab88_advanced-analytics-card-image-gradient-digigrowth-webflow-template.png",
     check: "https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/684c83cd39b500e1d9872058_pink-check-digigrowth-webflow-template.svg"
   },
   {
-    title: "Funnel optimization",
-    description: "Lorem ipsum dolor sit ammet consectetur cras in fringilla integer nam in morbi augue laoreet.",
-    items: ["UX Analysis", "Funnel Audit", "CR Optimization"],
+   title: "Social Media Management",
+    description:
+      "Maintain a professional and engaging social media presence through strategic planning, optimized profiles, and meaningful audience interactions.",
+    items: [
+      "Content Calendar Planning",
+      "Profile Setup & Optimization",
+      "Community Engagement"
+    ],
     image: "https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/689f64fbd6d3427e4b201249_funnel-optimization-card-image-digigrowth-webflow-template.png",
     gradient: "https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/68a3677ca9fdef94afdb8e2d_funnel-optimization-card-image-gradient-digigrowth-webflow-template.png",
     check: "https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/684c83ce821634441d5cf397_orange-check-digigrowth-webflow-template.svg"
   },
   {
-    title: "Paid advertising",
-    description: "Lorem ipsum dolor sit ammet consectetur cras in fringilla integer nam in morbi augue laoreet.",
-    items: ["Ads A/B Testing", "CR Optimization", "Retargeting"],
+    title: "Social Media Marketing",
+    description:
+      "Accelerate engagement and business growth with targeted social campaigns that connect with the right audience and convert attention into results.",
+    items: [
+      "Campaign Strategy",
+      "Audience Targeting",
+      "Engagement & Growth Strategy"
+    ],
     image: "https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/689f64fb725050393dd4650f_paid-advertising-card-image-digigrowth-webflow-template.png",
     gradient: "https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/68a3677c8d27b59ea5e0d6f1_paid-advertising-card-image-gradient-digigrowth-webflow-template.png",
     check: "https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/684c83cd39b500e1d9872058_pink-check-digigrowth-webflow-template.svg"
   },
   {
-    title: "Content marketing",
-    description: "Lorem ipsum dolor sit ammet consectetur cras in fringilla integer nam in morbi augue laoreet.",
-    items: ["Content Plan", "Content Creation", "Community Management"],
+    title: "Paid Advertising",
+    description:
+      "Launch and optimize high-performing paid advertising campaigns that maximize visibility, generate qualified leads, and deliver measurable ROI.",
+    items: [
+      "PPC / SEM",
+      "Meta & Google Ads",
+      "Ads A/B Testing"
+    ],
     image: "https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/689f64fbbe47a7bedbc8aded_content-marketing-card-image-digigrowth-webflow-template.png",
     gradient: "https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/68a3686489662b8e52c88dff_content-marketing-card-image-gradient-digigrowth-webflow-template.png",
     check: "https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/684c83ce821634441d5cf397_orange-check-digigrowth-webflow-template.svg"
@@ -79,7 +109,7 @@ export default function Services() {
           transition={{ duration: 0.6 }}
           className="text-3xl md:text-4xl lg:text-[40px] font-bold text-navy mb-4 tracking-tight"
         >
-          Next-level business services
+          Powering Your Digital Growth Journey
         </motion.h2>
         <motion.p 
           initial={{ opacity: 0, y: 30 }}
@@ -88,7 +118,7 @@ export default function Services() {
           transition={{ duration: 0.6, delay: 0.15 }}
           className="text-neutral-500 text-base md:text-lg max-w-[550px] mx-auto leading-relaxed"
         >
-          Lorem ipsum dolor sit amet consectetur neque blandit sit iaculis rhoncus in ac volutpat a tortor nulla donec et dui at posuere.
+          From strategy to execution, we help businesses build a strong online presence and achieve sustainable growth.
         </motion.p>
       </div>
 

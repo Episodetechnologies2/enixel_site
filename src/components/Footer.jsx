@@ -35,7 +35,7 @@ export default function Footer() {
           </div>
           <div className="lg:col-span-8 flex flex-col md:flex-row md:items-center justify-between gap-6 w-full">
             <h2 className="text-xl md:text-2xl text-white font-bold tracking-tight max-w-[420px] leading-snug">
-              We talk about all things marketing in our email newsletter. Interested? Subscribe for free.
+              Get practical tips and industry updates delivered directly to your inbox.
             </h2>
             <div className="w-full max-w-[400px]">
               <form onSubmit={handleSubscribe} className="w-full bg-white rounded-full flex items-center p-1 border border-neutral-800">
