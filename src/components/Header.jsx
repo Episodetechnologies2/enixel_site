@@ -31,7 +31,7 @@ export default function Header() {
         <Link to="/" className="flex items-center z-50">
           <img
             src={enixel}
-            alt="Digigrowth Logo"
+            alt="Enixel Logo"
             className="h-[80px] w-auto"
           />
         </Link>
