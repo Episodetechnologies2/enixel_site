@@ -155,7 +155,7 @@ export default function Contact() {
             {/* Help & Support */}
             <motion.a 
               variants={itemVariants}
-              href="mailto:support@digigrowth.com"
+              href="mailto:support@enixel.com"
               className="group relative flex flex-col justify-between bg-white rounded-custom-lg border border-neutral-200/50 p-8 sm:p-10 shadow-sm hover:shadow-premium transition-all duration-400 overflow-hidden"
             >
               {/* Background gradient image effect on hover */}
@@ -177,7 +177,7 @@ export default function Contact() {
                 </p>
               </div>
               <div className="z-10 w-full inline-flex items-center justify-center py-3 bg-neutral-100 group-hover:bg-brand-pink group-hover:text-white rounded-full font-bold text-xs text-navy tracking-wide uppercase transition-all duration-300 gap-2">
-                <span>support@digigrowth.com</span>
+                <span>support@enixel.com</span>
                 <ArrowRight className="w-4 h-4" />
               </div>
             </motion.a>
@@ -185,7 +185,7 @@ export default function Contact() {
             {/* Sales & Inquiries */}
             <motion.a 
               variants={itemVariants}
-              href="mailto:sales@digigrowth.com"
+              href="mailto:sales@enixel.com"
               className="group relative flex flex-col justify-between bg-white rounded-custom-lg border border-neutral-200/50 p-8 sm:p-10 shadow-sm hover:shadow-premium transition-all duration-400 overflow-hidden"
             >
               <div 
@@ -206,7 +206,7 @@ export default function Contact() {
                 </p>
               </div>
               <div className="z-10 w-full inline-flex items-center justify-center py-3 bg-neutral-100 group-hover:bg-brand-orange group-hover:text-white rounded-full font-bold text-xs text-navy tracking-wide uppercase transition-all duration-300 gap-2">
-                <span>sales@digigrowth.com</span>
+                <span>sales@enixel.com</span>
                 <ArrowRight className="w-4 h-4" />
               </div>
             </motion.a>
@@ -303,7 +303,7 @@ export default function Contact() {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                href="mailto:info@digigrowth.com"
+                href="mailto:info@enixel.com"
                 className="group flex items-center gap-5 p-5 bg-white border border-neutral-200/50 rounded-custom-sm shadow-sm hover:shadow-premium transition-all duration-300"
               >
                 <div className="w-12 h-12 rounded-custom-sm bg-brand-pink-light/40 flex items-center justify-center text-brand-pink transition-transform duration-300 group-hover:scale-105 shadow-badge-pink">
@@ -312,7 +312,7 @@ export default function Contact() {
                 <div>
                   <div className="text-[12px] font-bold text-neutral-400 uppercase tracking-wide">Send us an email</div>
                   <div className="text-[15px] font-bold text-navy group-hover:text-brand-pink transition-colors duration-200 flex items-center gap-1.5 mt-0.5">
-                    <span>info@digigrowth.com</span>
+                    <span>info@enixel.com</span>
                     <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200" />
                   </div>
                 </div>

@@ -31,7 +31,7 @@ export default function Header() {
         <Link to="/" className="flex items-center z-50">
           <img
             src={enixel}
-            alt="Digigrowth Logo"
+            alt="Enixel Logo"
             className="h-[80px] w-auto"
           />
         </Link>
@@ -41,7 +41,7 @@ export default function Header() {
           <nav className="flex items-center space-x-8 text-neutral-800">
             <SlidNavLink to="/">Home</SlidNavLink>
             <SlidNavLink to="/about">About</SlidNavLink>
-            <SlidNavLink to="/pricing">Pricing</SlidNavLink>
+            {/* <SlidNavLink to="/pricing">Pricing</SlidNavLink> */}
             <SlidNavLink to="/blog">Blog</SlidNavLink>
           </nav>
 
