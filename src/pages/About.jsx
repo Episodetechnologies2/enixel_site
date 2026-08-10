@@ -178,7 +178,7 @@ export default function AboutPage() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="lg:col-span-6 flex self-end lg:translate-y-16"
+            className="lg:col-span-6 flex justify-center lg:justify-end lg:self-end lg:translate-y-24 lg:translate-x-[300px]"
           >
             <img 
               src="https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/68967b58a8f9998b82bb9c9d_about-hero-image-digigrowth-webflow-template.png" 
