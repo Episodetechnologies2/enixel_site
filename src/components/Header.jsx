@@ -43,6 +43,7 @@ export default function Header() {
             <SlidNavLink to="/about">About</SlidNavLink>
             {/* <SlidNavLink to="/pricing">Pricing</SlidNavLink> */}
             <SlidNavLink to="/blog">Blog</SlidNavLink>
+            <SlidNavLink to="/work">Work</SlidNavLink>
           </nav>
 
           <div className="ml-6">
@@ -80,6 +81,7 @@ export default function Header() {
               <Link to="/about" className="text-lg font-medium hover:text-neutral-300 py-1">About</Link>
               <Link to="/pricing" className="text-lg font-medium hover:text-neutral-300 py-1">Pricing</Link>
               <Link to="/blog" className="text-lg font-medium hover:text-neutral-300 py-1">Blog</Link>
+              <Link to="/work" className="text-lg font-medium hover:text-neutral-300 py-1">Work</Link>
 
               <Link
                 to="/contact"

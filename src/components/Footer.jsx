@@ -80,6 +80,9 @@ export default function Footer() {
               <Link to="/blog" className="text-neutral-400 hover:text-white text-[15px] font-medium transition-colors w-fit hover-underline-anim">
                 Blog
               </Link>
+              <Link to="/work" className="text-neutral-400 hover:text-white text-[15px] font-medium transition-colors w-fit hover-underline-anim">
+                Work
+              </Link>
               <Link to="/contact" className="text-neutral-400 hover:text-white text-[15px] font-medium transition-colors w-fit hover-underline-anim">
                 Contact
               </Link>
