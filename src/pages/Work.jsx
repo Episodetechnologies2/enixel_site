@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowUpRight, X, Sparkles, Filter, Award, Target, TrendingUp } from 'lucide-react'
+import { ArrowUpRight, X, Sparkles, Filter, Award, Target, TrendingUp, ShieldAlert } from 'lucide-react'
 
 
 
@@ -10,6 +10,7 @@ export default function Work() {
   const [projectsList, setProjectsList] = useState([])
   const [categoriesList, setCategoriesList] = useState(['All'])
   const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState(null)
   const navigate = useNavigate()
 
   // Load projects and categories from API with static fallback
@@ -37,6 +38,7 @@ export default function Work() {
         if (active) {
           setProjectsList([]);
           setCategoriesList(['All']);
+          setError('Database/API connection failed. Please ensure the backend database is connected and running.');
         }
       } finally {
         if (active) {
@@ -158,6 +160,18 @@ export default function Work() {
             <div className="flex flex-col items-center justify-center py-12">
               <div className="w-8 h-8 border-4 border-brand-orange border-t-transparent rounded-full animate-spin mb-4"></div>
               <p className="text-neutral-500 text-sm font-semibold">Loading projects...</p>
+            </div>
+          ) : error ? (
+            <div className="flex flex-col items-center justify-center py-12 bg-white rounded-custom-md border border-neutral-200/60 p-8 shadow-sm text-center max-w-[600px] mx-auto">
+              <ShieldAlert className="w-12 h-12 text-brand-red mb-4" />
+              <h3 className="text-xl font-bold text-navy mb-2">Database Connection Required</h3>
+              <p className="text-neutral-600 text-sm mb-6">
+                This page displays dynamic case studies from a database. 
+                The database connection is currently not configured or reachable on this deployment environment (e.g. Vercel).
+              </p>
+              <div className="text-[12px] bg-neutral-100 text-neutral-500 p-3 rounded font-mono break-all text-left w-full">
+                Error: {error}
+              </div>
             </div>
           ) : (
             /* GRID OF WORKS */

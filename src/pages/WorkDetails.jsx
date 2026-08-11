@@ -73,7 +73,7 @@ export default function WorkDetails() {
       } catch (err) {
         console.warn("Could not fetch project from server:", err);
         if (active) {
-          setError('Project not found');
+          setError('Database/API connection failed. Please ensure the backend database is connected and running.');
           setLoading(false);
         }
       }
@@ -95,11 +95,23 @@ export default function WorkDetails() {
   }
 
   if (error || !project) {
+    const isConnError = error && error.includes('connection');
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-neutral-100 px-6 text-center">
         <ShieldAlert className="w-16 h-16 text-brand-red mb-4" />
-        <h1 className="text-2xl font-bold text-navy mb-2">Project Not Found</h1>
-        <p className="text-neutral-600 mb-6">The project you are looking for does not exist or has been removed.</p>
+        <h1 className="text-2xl font-bold text-navy mb-2">
+          {isConnError ? 'Database Connection Required' : 'Project Not Found'}
+        </h1>
+        <p className="text-neutral-600 mb-6 max-w-md leading-relaxed">
+          {isConnError 
+            ? 'This page displays dynamic case study details from a database. The database connection is currently not configured or reachable on this deployment environment (e.g. Vercel).'
+            : 'The project you are looking for does not exist or has been removed.'}
+        </p>
+        {error && (
+          <div className="text-[12px] bg-neutral-200/50 text-neutral-600 p-3 rounded font-mono break-all text-left max-w-md mx-auto mb-6 w-full">
+            Error: {error}
+          </div>
+        )}
         <button
           onClick={() => navigate('/work')}
           className="inline-flex items-center gap-2 px-6 py-3 bg-navy text-white font-bold rounded-full hover:bg-neutral-800 transition-colors cursor-pointer"
