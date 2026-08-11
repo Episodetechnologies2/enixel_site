@@ -39,10 +39,14 @@ CREATE TABLE IF NOT EXISTS projects (
     results TEXT,
     results_image VARCHAR(255),
     testimonial_text TEXT,
+
     testimonial_author VARCHAR(255),
     testimonial_role VARCHAR(255),
+    services TEXT,
+    status VARCHAR(50) DEFAULT 'published',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
 
 -- Create Project Categories Junction Table (Many-to-Many relationship)
 CREATE TABLE IF NOT EXISTS project_categories (
