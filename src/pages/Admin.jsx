@@ -16,6 +16,7 @@ export default function Admin() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
   const [authError, setAuthError] = useState('')
   const [isAuthenticating, setIsAuthenticating] = useState(false)
 
@@ -53,6 +54,9 @@ export default function Admin() {
   const [currentPassword, setCurrentPassword] = useState('')
   const [newPassword, setNewPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
+  const [showCurrentPassword, setShowCurrentPassword] = useState(false)
+  const [showNewPassword, setShowNewPassword] = useState(false)
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false)
   const [isUpdatingPassword, setIsUpdatingPassword] = useState(false)
   const [passError, setPassError] = useState('')
   const [passSuccess, setPassSuccess] = useState('')
@@ -577,14 +581,23 @@ export default function Admin() {
 
             <div>
               <label className="text-xs font-bold text-navy uppercase tracking-wider mb-2 block">Password</label>
-              <input
-                type="password"
-                placeholder="••••••••"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full bg-neutral-100 text-navy rounded-2xl py-3.5 px-5 text-sm outline-none border border-neutral-200 focus:border-brand-orange transition-all duration-300"
-                required
-              />
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  placeholder="••••••••"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full bg-neutral-100 text-navy rounded-2xl py-3.5 pl-5 pr-12 text-sm outline-none border border-neutral-200 focus:border-brand-orange transition-all duration-300"
+                  required
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-navy cursor-pointer focus:outline-none"
+                >
+                  {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                </button>
+              </div>
             </div>
 
             {authError && (
@@ -1253,38 +1266,65 @@ export default function Admin() {
                 <form onSubmit={handleChangePassword} className="space-y-5">
                   <div>
                     <label className="text-xs font-bold text-navy uppercase tracking-wider mb-2 block">Current Password</label>
-                    <input
-                      type="password"
-                      placeholder="••••••••"
-                      value={currentPassword}
-                      onChange={(e) => setCurrentPassword(e.target.value)}
-                      className="w-full bg-neutral-100 text-navy rounded-xl py-3 px-4 text-sm outline-none border border-neutral-200 focus:border-brand-orange transition-all"
-                      required
-                    />
+                    <div className="relative">
+                      <input
+                        type={showCurrentPassword ? "text" : "password"}
+                        placeholder="••••••••"
+                        value={currentPassword}
+                        onChange={(e) => setCurrentPassword(e.target.value)}
+                        className="w-full bg-neutral-100 text-navy rounded-xl py-3 pl-4 pr-10 text-sm outline-none border border-neutral-200 focus:border-brand-orange transition-all"
+                        required
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setShowCurrentPassword(!showCurrentPassword)}
+                        className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-navy cursor-pointer focus:outline-none"
+                      >
+                        {showCurrentPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                      </button>
+                    </div>
                   </div>
 
                   <div>
                     <label className="text-xs font-bold text-navy uppercase tracking-wider mb-2 block">New Password</label>
-                    <input
-                      type="password"
-                      placeholder="••••••••"
-                      value={newPassword}
-                      onChange={(e) => setNewPassword(e.target.value)}
-                      className="w-full bg-neutral-100 text-navy rounded-xl py-3 px-4 text-sm outline-none border border-neutral-200 focus:border-brand-orange transition-all"
-                      required
-                    />
+                    <div className="relative">
+                      <input
+                        type={showNewPassword ? "text" : "password"}
+                        placeholder="••••••••"
+                        value={newPassword}
+                        onChange={(e) => setNewPassword(e.target.value)}
+                        className="w-full bg-neutral-100 text-navy rounded-xl py-3 pl-4 pr-10 text-sm outline-none border border-neutral-200 focus:border-brand-orange transition-all"
+                        required
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setShowNewPassword(!showNewPassword)}
+                        className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-navy cursor-pointer focus:outline-none"
+                      >
+                        {showNewPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                      </button>
+                    </div>
                   </div>
 
                   <div>
                     <label className="text-xs font-bold text-navy uppercase tracking-wider mb-2 block">Confirm New Password</label>
-                    <input
-                      type="password"
-                      placeholder="••••••••"
-                      value={confirmPassword}
-                      onChange={(e) => setConfirmPassword(e.target.value)}
-                      className="w-full bg-neutral-100 text-navy rounded-xl py-3 px-4 text-sm outline-none border border-neutral-200 focus:border-brand-orange transition-all"
-                      required
-                    />
+                    <div className="relative">
+                      <input
+                        type={showConfirmPassword ? "text" : "password"}
+                        placeholder="••••••••"
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                        className="w-full bg-neutral-100 text-navy rounded-xl py-3 pl-4 pr-10 text-sm outline-none border border-neutral-200 focus:border-brand-orange transition-all"
+                        required
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                        className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-navy cursor-pointer focus:outline-none"
+                      >
+                        {showConfirmPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                      </button>
+                    </div>
                   </div>
 
                   {passError && (
