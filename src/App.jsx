@@ -14,7 +14,7 @@ import Footer from './components/Footer'
 
 function AppContent() {
   const location = useLocation()
-  const isAdmin = location.pathname.startsWith('/admin')
+  const isAdmin = location.pathname.toLowerCase().startsWith('/admin')
 
   React.useEffect(() => {
     if (isAdmin) return;
@@ -30,7 +30,7 @@ function AppContent() {
             const siteImage = getMediaUrl(profile.avatar);
 
             // Only override metadata on main static pages (not on work detail pages)
-            const isMainPage = ['/', '/about', '/blog', '/work', '/contact'].includes(location.pathname);
+            const isMainPage = ['/', '/about', '/blog', '/work', '/contact'].includes(location.pathname.toLowerCase());
             if (isMainPage) {
               document.title = siteTitle;
 

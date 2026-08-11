@@ -30,13 +30,14 @@ export default function Admin() {
 
   // CMS active tab - derived from route pathname
   let activeTab = 'dashboard'
-  if (location.pathname.startsWith('/admin/work')) {
+  const currentPath = location.pathname.toLowerCase()
+  if (currentPath.startsWith('/admin/work')) {
     activeTab = 'work'
-  } else if (location.pathname.startsWith('/admin/profile')) {
+  } else if (currentPath.startsWith('/admin/profile')) {
     activeTab = 'profile'
-  } else if (location.pathname.startsWith('/admin/settings')) {
+  } else if (currentPath.startsWith('/admin/settings')) {
     activeTab = 'settings'
-  } else if (location.pathname.startsWith('/admin/dashboard')) {
+  } else if (currentPath.startsWith('/admin/dashboard')) {
     activeTab = 'dashboard'
   }
 
@@ -65,14 +66,16 @@ export default function Admin() {
     const token = localStorage.getItem('enixel_admin_token')
     if (token === 'enixel-cms-session-token-2026') {
       setIsLoggedIn(true)
-      if (location.pathname === '/admin' || location.pathname === '/admin/') {
+      const pathLower = location.pathname.toLowerCase()
+      if (pathLower === '/admin' || pathLower === '/admin/') {
         navigate('/admin/dashboard')
       }
     }
   }, [location.pathname, navigate])
 
   useEffect(() => {
-    if (isLoggedIn && (location.pathname === '/admin' || location.pathname === '/admin/')) {
+    const pathLower = location.pathname.toLowerCase()
+    if (isLoggedIn && (pathLower === '/admin' || pathLower === '/admin/')) {
       navigate('/admin/dashboard')
     }
   }, [isLoggedIn, location.pathname, navigate])
