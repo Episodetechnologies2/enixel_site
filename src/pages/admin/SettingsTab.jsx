@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Eye, EyeOff, AlertCircle, Check } from 'lucide-react'
+import { getApiUrl } from '../../config'
 
 export default function SettingsTab({ showToast }) {
   const [currentPassword, setCurrentPassword] = useState('')
@@ -29,7 +30,7 @@ export default function SettingsTab({ showToast }) {
 
     setIsUpdatingPassword(true)
     try {
-      const response = await fetch('/api/settings/password', {
+      const response = await fetch(getApiUrl('/api/settings/password'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ currentPassword, newPassword })

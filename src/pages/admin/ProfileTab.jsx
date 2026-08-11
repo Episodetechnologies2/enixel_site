@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Upload } from 'lucide-react'
+import { getApiUrl, getMediaUrl } from '../../config'
 
 export default function ProfileTab({ profile, onProfileSaved, showToast }) {
   const [isEditingProfile, setIsEditingProfile] = useState(false)
@@ -30,7 +31,7 @@ export default function ProfileTab({ profile, onProfileSaved, showToast }) {
         formData.append('avatar', profileFile)
       }
 
-      const response = await fetch('/api/profile', {
+      const response = await fetch(getApiUrl('/api/profile'), {
         method: 'PUT',
         body: formData
       })
@@ -70,7 +71,7 @@ export default function ProfileTab({ profile, onProfileSaved, showToast }) {
           <div className="flex flex-col sm:flex-row items-center gap-6 pb-6 border-b border-neutral-200">
             <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-brand-orange shadow-premium flex-shrink-0 bg-neutral-900">
               <img
-                src={profile.avatar}
+                src={getMediaUrl(profile.avatar)}
                 alt="Askjey Profile"
                 className="w-full h-full object-cover"
               />
@@ -127,7 +128,7 @@ export default function ProfileTab({ profile, onProfileSaved, showToast }) {
             {/* File Upload with Preview */}
             <div className="relative w-24 h-24 rounded-full overflow-hidden border-4 border-brand-orange shadow-premium flex-shrink-0 bg-neutral-900 group">
               <img
-                src={profilePreview}
+                src={getMediaUrl(profilePreview)}
                 alt="Askjey Profile"
                 className="w-full h-full object-cover"
               />

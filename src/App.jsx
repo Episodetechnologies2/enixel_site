@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
+import { getApiUrl, getMediaUrl } from './config'
 import Home from './pages/Home'
 import AboutPage from './pages/About'
 import Blog from './pages/Blog'
@@ -20,15 +21,13 @@ function AppContent() {
 
     async function fetchSEOData() {
       try {
-        const res = await fetch('/api/profile');
+        const res = await fetch(getApiUrl('/api/profile'));
         if (res.ok) {
           const profile = await res.json();
           if (profile) {
             const siteTitle = `${profile.name || 'Askjey'} | ${profile.role || 'Administrator'}`;
             const siteDesc = profile.bio || '';
-            const siteImage = profile.avatar 
-              ? (profile.avatar.startsWith('http') ? profile.avatar : `${window.location.origin}${profile.avatar}`)
-              : '';
+            const siteImage = getMediaUrl(profile.avatar);
 
             // Only override metadata on main static pages (not on work detail pages)
             const isMainPage = ['/', '/about', '/blog', '/work', '/contact'].includes(location.pathname);

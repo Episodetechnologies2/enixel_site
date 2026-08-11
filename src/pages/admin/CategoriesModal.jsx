@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, Trash2 } from 'lucide-react'
+import { getApiUrl } from '../../config'
 
 export default function CategoriesModal({ 
   isOpen, 
@@ -17,7 +18,7 @@ export default function CategoriesModal({
     if (!newCategoryName.trim()) return
     setIsSavingCategory(true)
     try {
-      const response = await fetch('/api/categories', {
+      const response = await fetch(getApiUrl('/api/categories'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: newCategoryName.trim() })
@@ -40,7 +41,7 @@ export default function CategoriesModal({
   const handleDeleteCategory = async (catName) => {
     if (!window.confirm(`Are you sure you want to delete category "${catName}"?`)) return
     try {
-      const response = await fetch('/api/categories', {
+      const response = await fetch(getApiUrl('/api/categories'), {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: catName })

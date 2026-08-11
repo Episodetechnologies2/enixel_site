@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowUpRight, X, Sparkles, Filter, Award, Target, TrendingUp, ShieldAlert } from 'lucide-react'
+import { getApiUrl, getMediaUrl } from '../config'
 
 
 
@@ -19,8 +20,8 @@ export default function Work() {
     async function loadData() {
       try {
         const [projRes, catRes] = await Promise.all([
-          fetch('/api/projects'),
-          fetch('/api/categories')
+          fetch(getApiUrl('/api/projects')),
+          fetch(getApiUrl('/api/categories'))
         ]);
         if (!projRes.ok || !catRes.ok) throw new Error('API request failed');
 
@@ -195,7 +196,7 @@ export default function Work() {
                       {/* Project Image */}
                       <div className="aspect-[4/3] w-full rounded-custom-sm overflow-hidden mb-5 bg-neutral-100 border border-neutral-200/20 relative">
                         <img
-                          src={project.image}
+                          src={getMediaUrl(project.image)}
                           alt={project.title}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-103"
                         />

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import logo from '../assets/enixal_favicon.png'
+import { getApiUrl, getMediaUrl } from '../config'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
   Plus, Trash2, Edit2, LogOut, Upload, Image, 
@@ -87,8 +88,8 @@ export default function Admin() {
     setIsLoading(true)
     try {
       const [projRes, catRes] = await Promise.all([
-        fetch('/api/projects'),
-        fetch('/api/categories')
+        fetch(getApiUrl('/api/projects')),
+        fetch(getApiUrl('/api/categories'))
       ])
       if (!projRes.ok || !catRes.ok) throw new Error('Failed to load dashboard data')
       const projData = await projRes.json()
@@ -98,7 +99,7 @@ export default function Admin() {
 
       // Fetch Profile Data
       try {
-        const profRes = await fetch('/api/profile')
+        const profRes = await fetch(getApiUrl('/api/profile'))
         if (profRes.ok) {
           const profData = await profRes.json()
           setProfileName(profData.name || 'Askjey')
@@ -129,7 +130,7 @@ export default function Admin() {
     setAuthError('')
     setIsAuthenticating(true)
     try {
-      const response = await fetch('/api/login', {
+      const response = await fetch(getApiUrl('/api/login'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: usernameInput, password: passwordInput })
@@ -161,7 +162,7 @@ export default function Admin() {
   const handleDeleteProject = async (id, title) => {
     if (!window.confirm(`Are you sure you want to delete the project "${title}"?`)) return
     try {
-      const response = await fetch(`/api/projects/${id}`, {
+      const response = await fetch(getApiUrl(`/api/projects/${id}`), {
         method: 'DELETE'
       })
       if (response.ok) {
@@ -200,7 +201,7 @@ export default function Admin() {
       const formData = new FormData();
       formData.append('data', JSON.stringify(payload));
 
-      const response = await fetch(`/api/projects/${proj.id}`, {
+      const response = await fetch(getApiUrl(`/api/projects/${proj.id}`), {
         method: 'PUT',
         body: formData
       });

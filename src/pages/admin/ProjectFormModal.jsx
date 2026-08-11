@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, Upload, Image } from 'lucide-react'
+import { getApiUrl, getMediaUrl } from '../../config'
 
 export default function ProjectFormModal({ 
   isOpen, 
@@ -154,7 +155,7 @@ export default function ProjectFormModal({
       if (fileStrategy) formData.append('strategyImage', fileStrategy)
       if (fileResults) formData.append('resultsImage', fileResults)
 
-      const url = project ? `/api/projects/${project.id}` : '/api/projects'
+      const url = project ? getApiUrl(`/api/projects/${project.id}`) : getApiUrl('/api/projects')
       const method = project ? 'PUT' : 'POST'
 
       const response = await fetch(url, {
@@ -371,7 +372,7 @@ export default function ProjectFormModal({
                   <div className="sm:col-span-4 flex justify-end">
                     <div className="w-28 h-20 bg-neutral-200 rounded-lg overflow-hidden border border-neutral-300/40 flex items-center justify-center">
                       {previewMain ? (
-                        <img src={previewMain} alt="Preview" className="w-full h-full object-cover" />
+                        <img src={getMediaUrl(previewMain)} alt="Preview" className="w-full h-full object-cover" />
                       ) : (
                         <Image className="w-6 h-6 text-neutral-400" />
                       )}
@@ -398,7 +399,7 @@ export default function ProjectFormModal({
                     <div className="lg:col-span-4 space-y-3">
                       <div className="h-28 bg-neutral-100 rounded-xl overflow-hidden border border-neutral-200 flex items-center justify-center relative">
                         {previewChallenge ? (
-                          <img src={previewChallenge} alt="Challenge Preview" className="w-full h-full object-cover" />
+                          <img src={getMediaUrl(previewChallenge)} alt="Challenge Preview" className="w-full h-full object-cover" />
                         ) : (
                           <div className="text-center p-3">
                             <Image className="w-5 h-5 text-neutral-400 mx-auto mb-1" />
@@ -439,7 +440,7 @@ export default function ProjectFormModal({
                     <div className="lg:col-span-4 space-y-3">
                       <div className="h-28 bg-neutral-100 rounded-xl overflow-hidden border border-neutral-200 flex items-center justify-center relative">
                         {previewStrategy ? (
-                          <img src={previewStrategy} alt="Strategy Preview" className="w-full h-full object-cover" />
+                          <img src={getMediaUrl(previewStrategy)} alt="Strategy Preview" className="w-full h-full object-cover" />
                         ) : (
                           <div className="text-center p-3">
                             <Image className="w-5 h-5 text-neutral-400 mx-auto mb-1" />
@@ -480,7 +481,7 @@ export default function ProjectFormModal({
                     <div className="lg:col-span-4 space-y-3">
                       <div className="h-28 bg-neutral-100 rounded-xl overflow-hidden border border-neutral-200 flex items-center justify-center relative">
                         {previewResults ? (
-                          <img src={previewResults} alt="Results Preview" className="w-full h-full object-cover" />
+                          <img src={getMediaUrl(previewResults)} alt="Results Preview" className="w-full h-full object-cover" />
                         ) : (
                           <div className="text-center p-3">
                             <Image className="w-5 h-5 text-neutral-400 mx-auto mb-1" />

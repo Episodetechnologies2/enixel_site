@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ArrowLeft, Check, Award, ShieldAlert, Sparkles, Send } from 'lucide-react'
+import { getApiUrl, getMediaUrl } from '../config'
 
 
 
@@ -39,9 +40,7 @@ export default function WorkDetails() {
       };
 
       const descriptionText = project.description || '';
-      const imageUrl = project.image 
-        ? (project.image.startsWith('http') ? project.image : `${window.location.origin}${project.image}`) 
-        : '';
+      const imageUrl = getMediaUrl(project.image);
 
       updateMetaTag('meta[name="description"]', 'content', descriptionText);
       updateMetaTag('meta[name="title"]', 'content', `${project.title} | Enixel`);
@@ -61,7 +60,7 @@ export default function WorkDetails() {
     let active = true;
     async function fetchProject() {
       try {
-        const response = await fetch(`/api/projects/${id}`);
+        const response = await fetch(getApiUrl(`/api/projects/${id}`));
         if (!response.ok) {
           throw new Error('Project not found on server');
         }
@@ -176,7 +175,7 @@ export default function WorkDetails() {
             <div className="lg:col-span-5 relative">
               <div className="aspect-[4/3] rounded-custom-lg overflow-hidden border border-white/30 shadow-premium bg-white/20 p-2">
                 <img
-                  src={project.image}
+                  src={getMediaUrl(project.image)}
                   alt={project.title}
                   className="w-full h-full object-cover rounded-custom-md"
                 />
@@ -212,7 +211,7 @@ export default function WorkDetails() {
                   <div className="aspect-[4/3] rounded-custom-md overflow-hidden bg-neutral-200 border border-neutral-300/40 shadow-premium group">
                     {project.details.challengeImage ? (
                       <img
-                        src={project.details.challengeImage}
+                        src={getMediaUrl(project.details.challengeImage)}
                         alt="Challenge representation"
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-103"
                       />
@@ -235,7 +234,7 @@ export default function WorkDetails() {
                   <div className="aspect-[4/3] rounded-custom-md overflow-hidden bg-neutral-200 border border-neutral-300/40 shadow-premium group">
                     {project.details.strategyImage ? (
                       <img
-                        src={project.details.strategyImage}
+                        src={getMediaUrl(project.details.strategyImage)}
                         alt="Strategy representation"
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-103"
                       />
@@ -296,7 +295,7 @@ export default function WorkDetails() {
                   <div className="aspect-[4/3] rounded-custom-md overflow-hidden bg-neutral-200 border border-neutral-300/40 shadow-premium group">
                     {project.details.resultsImage ? (
                       <img
-                        src={project.details.resultsImage}
+                        src={getMediaUrl(project.details.resultsImage)}
                         alt="Results representation"
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-103"
                       />

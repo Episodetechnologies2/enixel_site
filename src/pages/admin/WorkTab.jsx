@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Plus, Image, Eye, EyeOff, Edit2, Trash2 } from 'lucide-react'
+import { getMediaUrl } from '../../config'
 
 export default function WorkTab({
   projects,
@@ -95,7 +96,7 @@ export default function WorkTab({
                     <td className="py-4 px-6">
                       <div className="w-12 h-10 rounded-lg overflow-hidden bg-neutral-100 border border-neutral-200/40 flex items-center justify-center mx-auto">
                         {proj.image ? (
-                          <img src={proj.image} alt={proj.title} className="w-full h-full object-cover" />
+                          <img src={getMediaUrl(proj.image)} alt={proj.title} className="w-full h-full object-cover" />
                         ) : (
                           <Image className="w-4 h-4 text-neutral-400" />
                         )}
