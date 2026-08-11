@@ -513,6 +513,11 @@ app.delete('/api/projects/:id', async (req, res) => {
 });
 
 // Start Server
-app.listen(PORT, () => {
-  console.log(`CMS Backend Server is running on port ${PORT}`);
-});
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`CMS Backend Server is running on port ${PORT}`);
+  });
+}
+
+export default app;
+
