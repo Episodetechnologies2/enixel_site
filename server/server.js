@@ -60,19 +60,19 @@ const upload = multer({
   { name: 'resultsImage', maxCount: 1 }
 ]);
 
-// Database Connection Pool
 const db = (process.env.DATABASE_URL || process.env.DB_URL)
   ? mysql.createPool(process.env.DATABASE_URL || process.env.DB_URL)
   : mysql.createPool({
-      host: process.env.DB_HOST || '127.0.0.1',
-      port: parseInt(process.env.DB_PORT || '3307', 10),
-      user: process.env.DB_USER || 'root',
-      password: process.env.DB_PASSWORD || '',
-      database: process.env.DB_NAME || 'Enixel',
+      host: process.env.DB_HOST,
+      port: parseInt(process.env.DB_PORT || '3306', 10),
+      user: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
+      database: process.env.DB_NAME,
       waitForConnections: true,
       connectionLimit: 10,
       queueLimit: 0
     });
+
 
 
 // Helper to safely parse services JSON or text
