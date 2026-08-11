@@ -83,7 +83,7 @@ export default function Admin() {
     }
   }, [isLoggedIn])
 
-  const loadCMSData = async () => {
+    const loadCMSData = async () => {
     setIsLoading(true)
     try {
       const [projRes, catRes] = await Promise.all([
