@@ -3,105 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowUpRight, X, Sparkles, Filter, Award, Target, TrendingUp } from 'lucide-react'
 
-// Case studies data for digital marketing projects
-const DEFAULT_PROJECTS = [
-  {
-    id: 'zamindar-kitchen',
-    title: 'Zamindar Kitchen',
-    category: 'Social Growth',
-    categories: ['Social Growth', 'Branding'],
-    tagline: 'Heritage Culinary Branding',
-    stat: '+45%',
-    statLabel: 'Reservations',
-    statDetail: 'Increase in dining bookings within 30 days',
-    image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80',
-    description: 'Blending Coimbatore’s rich culinary history with hyper-local social campaigns to drive dinner table bookings.',
-    details: {
-      client: 'Zamindar Kitchen F&B Group',
-      services: ['Brand Identity & Tone', 'Local SEO & Citations', 'Social Content Strategy', 'Influencer Outreach'],
-      challenge: 'Launching a traditional heritage-themed restaurant in Coimbatore’s competitive dining landscape, while standing out to digital-savvy food enthusiasts.',
-      strategy: 'We created the "Food Heritage Chronicles" story series on Instagram & TikTok, showcasing slow-cooking processes and historical spice recipes. Simultaneously, we deployed hyper-targeted meta-lead ads to dinner-goers within a 15km radius of Coimbatore.',
-      results: 'Ranked top 3 for "best restaurant Coimbatore" on Google Maps, grew Instagram followers from 0 to 18k in 4 weeks, and generated a sustained 45% increase in weekend reservations.',
-      testimonial: {
-        text: 'Enixel captured the soul of our heritage kitchen and translated it into a digital experience that had lines out our door from day one.',
-        author: 'Chef Anand',
-        role: 'Founder, Zamindar Kitchen'
-      }
-    }
-  },
-  {
-    id: 'tentellect',
-    title: 'Tentellect',
-    category: 'SEO & Content',
-    categories: ['SEO & Content'],
-    tagline: 'B2B SaaS Authority',
-    stat: '+320%',
-    statLabel: 'Web Traffic',
-    statDetail: 'Increase in B2B organic traffic and commercial signups',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
-    description: 'Establishing domain authority for an enterprise-tier data intelligence platform through long-tail content hubs.',
-    details: {
-      client: 'Tentellect Intelligence Inc.',
-      services: ['Technical SEO Audits', 'Keyword Mapping & Clustering', 'High-Authority Backlink Acquisition', 'Whitepaper Content Creation'],
-      challenge: 'SaaS platforms face high ad costs. Tentellect needed to build a sustainable source of enterprise-level organic signups.',
-      strategy: 'We executed a comprehensive keyword cluster campaign targeting complex enterprise intelligence searches. We launched a weekly data engineering publication on their site and automated internal linking networks.',
-      results: 'Secured #1 positions for 18 high-intent commercial terms, increasing search click-throughs by 320% and generating over 800 premium organic signups.',
-      testimonial: {
-        text: 'Enixel didn’t just bring us traffic; they brought us the exact decision-makers we needed to scale our enterprise tier.',
-        author: 'Jey Anand',
-        role: 'CTO, Tentellect'
-      }
-    }
-  },
-  {
-    id: 'odaka',
-    title: 'Odaka',
-    category: 'Performance Marketing',
-    categories: ['Performance Marketing'],
-    tagline: 'Paid Ads Optimization',
-    stat: '+120k',
-    statLabel: 'Users Acquired',
-    statDetail: 'New app installs with a 38% reduction in CPI',
-    image: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80',
-    description: 'Driving downloads for a digital culture portal using dynamic video creative testing and automated bid funnels.',
-    details: {
-      client: 'Odaka Media Portal',
-      services: ['Paid Acquisition (TikTok & YouTube)', 'Mobile App Tracking Setup', 'Creative Production', 'Ad Spend Optimization'],
-      challenge: 'Capturing Gen-Z/Millennial attention to download an entertainment app and keep acquisition costs below $1.50 per install.',
-      strategy: 'We built a high-speed video production system testing 40+ ad hooks weekly. Using Meta’s Advantage+ app campaigns and TikTok smart bidding, we optimized spend toward high-engagement users.',
-      results: 'Aired viral video ad clips with over 6.5M total views, generated 120,000 active app signups in 60 days, and decreased Average CPI by 38% below benchmark.',
-      testimonial: {
-        text: 'Our user acquisition numbers blew past our quarterly forecasts in the first few weeks thanks to Enixel’s creative campaigns.',
-        author: 'Sarah Jenkins',
-        role: 'Marketing Lead, Odaka'
-      }
-    }
-  },
-  {
-    id: 'zircle',
-    title: 'Zircle',
-    category: 'Branding',
-    categories: ['Branding', 'Social Growth'],
-    tagline: 'Brand Launch Campaign',
-    stat: '2.4M',
-    statLabel: 'Video Views',
-    statDetail: 'Organic impressions generated during launch week',
-    image: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80',
-    description: 'Coordinating an invite-only waitlist launch campaign for a creator-first photography and community application.',
-    details: {
-      client: 'Zircle Labs',
-      services: ['Brand Identity & Style Guides', 'Beta Waitlist UI Consulting', 'Micro-Influencer Seeding', 'Organic Social Launch Campaign'],
-      challenge: 'Launching a social network into a market saturated by Instagram and VSCO requires building elite brand desirability.',
-      strategy: 'We positioned Zircle as a premium, ad-free photography sanctuary. We ran a gated waitlist invite campaign and seeded early access to 50 key visual storytellers who posted exclusive teaser content.',
-      results: 'Gained 15,000 waitlist signups in 14 days, generating 2.4 million views on launch hashtags and making Zircle a trending design topic on Twitter.',
-      testimonial: {
-        text: 'Enixel understood our vision for a clean visual community. Their branding strategy made Zircle feel premium and exclusive from day one.',
-        author: 'David Wu',
-        role: 'Head of Product, Zircle'
-      }
-    }
-  }
-]
+
 
 export default function Work() {
   const [selectedCategory, setSelectedCategory] = useState('All')
@@ -131,10 +33,10 @@ export default function Work() {
           setCategoriesList(['All', ...catData]);
         }
       } catch (err) {
-        console.warn("Failed to load CMS data, falling back to static content:", err);
+        console.warn("Failed to load CMS data:", err);
         if (active) {
-          setProjectsList(DEFAULT_PROJECTS);
-          setCategoriesList(['All', 'SEO & Content', 'Performance Marketing', 'Social Growth', 'Branding']);
+          setProjectsList([]);
+          setCategoriesList(['All']);
         }
       } finally {
         if (active) {
