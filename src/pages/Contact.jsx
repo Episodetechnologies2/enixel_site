@@ -141,7 +141,7 @@ export default function Contact() {
               transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
               className="text-neutral-600 text-base md:text-lg max-w-[500px] mx-auto leading-relaxed"
             >
-              Lorem ipsum dolor sit amet consectetur neque blandit sit iaculis rhoncus in ac volutpat a tortor nulla donec et dui at posuere.
+                Have a project, a marketing challenge, or an idea you want to explore? Reach out - we usually respond within one business day.
             </motion.p>
           </div>
 
@@ -155,7 +155,7 @@ export default function Contact() {
             {/* Help & Support */}
             <motion.a 
               variants={itemVariants}
-              href="mailto:support@enixel.com"
+              href="mailto:enixel.social@gmail.com"
               className="group relative flex flex-col justify-between bg-white rounded-custom-lg border border-neutral-200/50 p-8 sm:p-10 shadow-sm hover:shadow-premium transition-all duration-400 overflow-hidden"
             >
               {/* Background gradient image effect on hover */}
@@ -173,11 +173,11 @@ export default function Contact() {
                 />
                 <h3 className="text-xl font-bold text-navy mb-3 tracking-tight">Help & support</h3>
                 <p className="text-neutral-500 text-[14px] leading-relaxed mb-6">
-                  Pellentesque purus tempor dolor ac consequat bibendum vitae in massa ac viverra tellus nisl.
+                  We’re here to help you make the most of our services.
                 </p>
               </div>
               <div className="z-10 w-full inline-flex items-center justify-center py-3 bg-neutral-100 group-hover:bg-brand-pink group-hover:text-white rounded-full font-bold text-xs text-navy tracking-wide uppercase transition-all duration-300 gap-2">
-                <span>support@enixel.com</span>
+                <span>enixel.social@gmail.com</span>
                 <ArrowRight className="w-4 h-4" />
               </div>
             </motion.a>
@@ -185,7 +185,7 @@ export default function Contact() {
             {/* Sales & Inquiries */}
             <motion.a 
               variants={itemVariants}
-              href="mailto:sales@enixel.com"
+              href="mailto:enixel.social@gmail.com"
               className="group relative flex flex-col justify-between bg-white rounded-custom-lg border border-neutral-200/50 p-8 sm:p-10 shadow-sm hover:shadow-premium transition-all duration-400 overflow-hidden"
             >
               <div 
@@ -202,11 +202,11 @@ export default function Contact() {
                 />
                 <h3 className="text-xl font-bold text-navy mb-3 tracking-tight">Sales & inquiries</h3>
                 <p className="text-neutral-500 text-[14px] leading-relaxed mb-6">
-                  Magnis adipiscing risus non ut pellentesque elit risus quam massa enim a sociis orci quis aliquet.
+                  Give us a call and let’s discuss what you have in mind.
                 </p>
               </div>
               <div className="z-10 w-full inline-flex items-center justify-center py-3 bg-neutral-100 group-hover:bg-brand-orange group-hover:text-white rounded-full font-bold text-xs text-navy tracking-wide uppercase transition-all duration-300 gap-2">
-                <span>sales@enixel.com</span>
+                <span>enixel.social@gmail.com</span>
                 <ArrowRight className="w-4 h-4" />
               </div>
             </motion.a>
@@ -214,7 +214,7 @@ export default function Contact() {
             {/* Live Chat */}
             <motion.a 
               variants={itemVariants}
-              href="https://www.intercom.com/"
+              href="enixel.social@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative flex flex-col justify-between bg-white rounded-custom-lg border border-neutral-200/50 p-8 sm:p-10 shadow-sm hover:shadow-premium transition-all duration-400 overflow-hidden"
@@ -233,7 +233,7 @@ export default function Contact() {
                 />
                 <h3 className="text-xl font-bold text-navy mb-3 tracking-tight">Live chat</h3>
                 <p className="text-neutral-500 text-[14px] leading-relaxed mb-6">
-                  Duis sit non vivamus sem in eget pellentesque adipiscing massa enim fusce.
+                  See our latest work, ideas and updates across social media.
                 </p>
               </div>
               <div className="z-10 w-full inline-flex items-center justify-center py-3 bg-neutral-100 group-hover:bg-brand-pink group-hover:text-white rounded-full font-bold text-xs text-navy tracking-wide uppercase transition-all duration-300 gap-2">
@@ -267,7 +267,7 @@ export default function Contact() {
                 transition={{ delay: 0.1 }}
                 className="text-neutral-600 text-sm md:text-base leading-relaxed mb-8 max-w-[400px]"
               >
-                Lorem ipsum dolor sit amet consectetur lacinia a odio vitae a viverra massa id blandit ullamcorper in tempor.
+                Have a project, a marketing challenge, or an idea you want to explore? Reach out - we usually respond within one business day.
               </motion.p>
               
               {/* Social icons */}
@@ -279,10 +279,10 @@ export default function Contact() {
                 className="flex items-center space-x-3 mb-12"
               >
                 {[
-                  { icon: <FaFacebookF className="w-4 h-4" />, href: "https://www.facebook.com/" },
-                  { icon: <FaXTwitter className="w-4 h-4" />, href: "https://x.com/" },
-                  { icon: <FaInstagram className="w-4 h-4" />, href: "https://instagram.com/" },
-                  { icon: <FaLinkedinIn className="w-4 h-4" />, href: "http://linkedin.com/" }
+                  { icon: <FaFacebookF className="w-4 h-4" />, href: "https://www.facebook.com/profile.php?id=61592600500190" },
+                  { icon: <FaXTwitter className="w-4 h-4" />, href: "https://x.com/EnixelSocial" },
+                  { icon: <FaInstagram className="w-4 h-4" />, href: "https://www.instagram.com/enixel_social/" },
+                  { icon: <FaLinkedinIn className="w-4 h-4" />, href: "https://www.linkedin.com/in/enixel-social-b20101429/" }
                 ].map((social, sIdx) => (
                   <a 
                     key={sIdx}
@@ -303,7 +303,7 @@ export default function Contact() {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                href="mailto:info@enixel.com"
+                href="mailto:enixel.social@gmail.com"
                 className="group flex items-center gap-5 p-5 bg-white border border-neutral-200/50 rounded-custom-sm shadow-sm hover:shadow-premium transition-all duration-300"
               >
                 <div className="w-12 h-12 rounded-custom-sm bg-brand-pink-light/40 flex items-center justify-center text-brand-pink transition-transform duration-300 group-hover:scale-105 shadow-badge-pink">
@@ -312,7 +312,7 @@ export default function Contact() {
                 <div>
                   <div className="text-[12px] font-bold text-neutral-400 uppercase tracking-wide">Send us an email</div>
                   <div className="text-[15px] font-bold text-navy group-hover:text-brand-pink transition-colors duration-200 flex items-center gap-1.5 mt-0.5">
-                    <span>info@enixel.com</span>
+                    <span>enixel.social@gmail.com</span>
                     <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200" />
                   </div>
                 </div>
@@ -323,7 +323,7 @@ export default function Contact() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                href="tel:(123)456-7890"
+                href="tel:+91 9500726263"
                 className="group flex items-center gap-5 p-5 bg-white border border-neutral-200/50 rounded-custom-sm shadow-sm hover:shadow-premium transition-all duration-300"
               >
                 <div className="w-12 h-12 rounded-custom-sm bg-brand-orange-light/40 flex items-center justify-center text-brand-orange transition-transform duration-300 group-hover:scale-105 shadow-badge-orange">
@@ -332,7 +332,7 @@ export default function Contact() {
                 <div>
                   <div className="text-[12px] font-bold text-neutral-400 uppercase tracking-wide">Give us a call</div>
                   <div className="text-[15px] font-bold text-navy group-hover:text-brand-orange transition-colors duration-200 flex items-center gap-1.5 mt-0.5">
-                    <span>(123) 456 - 7890</span>
+                    <span>+91 9500726263</span>
                     <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200" />
                   </div>
                 </div>

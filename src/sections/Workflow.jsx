@@ -7,9 +7,9 @@ const steps = [
   {
     id: 1,
     badge: "Step 01",
-    tabLabel: "1. Let’s make a plan",
-    title: "Let’s make a plan",
-    description: "Donec rutrum enim viverra pretium at velit a adipiscing sed et amet velit vitae vehicula maecenas congue viverra sit dui ultricies.",
+    tabLabel: "1. Discover & Plan",
+    title: "Discover & Plan",
+    description: "We start by understanding your business, your audience, and what “growth” actually means for you - then build a plan around that, not a generic template.",
     image: "https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/68504cbc22019193684a4224_make-a-plan-digigrowth-webflow-template.png",
     icon: "https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/684c455a5047b59f559ad81b_make-a-plan-icon-digigrowth-webflow-template.svg",
     shadowClass: "shadow-[0_8px_24px_rgba(254,86,107,0.15)] bg-brand-pink-light"
@@ -17,9 +17,9 @@ const steps = [
   {
     id: 2,
     badge: "Step 02",
-    tabLabel: "2. Launch and execute",
-    title: "Launch and execute",
-    description: "Donec rutrum enim viverra pretium at velit a adipiscing sed et amet velit vitae vehicula maecenas congue viverra sit dui ultricies.",
+    tabLabel: "2. Execute & Optimize",
+    title: "Execute & Optimize",
+    description: "Once the plan’s set, we get to work. Campaigns go live, content starts publishing, and every channel is built out properly - not rushed.",
     image: "https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/68504cbcfa5c1b2873945495_launch-and-execute-digigrowth-webflow-template.png",
     icon: "https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/684c455a0e4202927ac76472_launch-and-execute-icon-digigrowth-webflow-template.svg",
     shadowClass: "shadow-[0_8px_24px_rgba(251,141,82,0.15)] bg-brand-orange-light"
@@ -27,9 +27,9 @@ const steps = [
   {
     id: 3,
     badge: "Step 03",
-    tabLabel: "3. Grow and scale",
-    title: "Grow and scale",
-    description: "Donec rutrum enim viverra pretium at velit a adipiscing sed et amet velit vitae vehicula maecenas congue viverra sit dui ultricies.",
+    tabLabel: "3. Scale Your Growth",
+    title: "Scale Your Growth",
+    description: "We track what’s working, cut what isn’t, and double down on the channels driving real results. Growth isn’t a one-time launch - it's ongoing. ",
     image: "https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/68504cbc9a8c38175cec3fe5_grow-and-scale-digigrowth-webflow-template.png",
     icon: "https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/684c455a52ca8b0c3839e59f_chart-icon-digigrowth-webflow-template.svg",
     shadowClass: "shadow-[0_8px_24px_rgba(254,86,107,0.15)] bg-brand-pink-light"
@@ -48,11 +48,11 @@ export default function Workflow() {
         <div className="lg:col-span-4 flex flex-col h-full justify-center">
           <div className="max-w-[340px] mb-8">
             <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold text-navy leading-none mb-4 tracking-tight">
-              Powerful and simple workflow
+              How We Actually Get Things Done
             </h2>
           </div>
           <p className="text-neutral-500 text-[15px] leading-relaxed mb-10">
-            Lorem ipsum dolor sit amet consectetur lacinia a viverra massa id blandit ullamcorper in tempor quis convallis morbi odio nisl nulla neque id ridiculus.
+            Every business has different goals. That's why we focus on a clear path from first call to real results.
           </p>
           
           {/* TAB BUTTONS LIST */}

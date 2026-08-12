@@ -4,20 +4,20 @@ import { Plus, Minus } from 'lucide-react'
 
 const faqs = [
   {
-    question: "How big is your marketing team?",
-    answer: "Lorem ipsum dolor sit amet consectetur aliquet tortor at cursus nisi placerat nisi pretium ut tortor curabitur massa ut massa auctor pellentesque."
+    question: "How long does SEO take to show results?",
+    answer: "SEO is a long-term strategy. Most businesses can see improvements within 3-6 months, depending on their competition. "
   },
   {
-    question: "What’s the typical cost for a campaign?",
-    answer: "Lorem ipsum dolor sit amet consectetur aliquet tortor at cursus nisi placerat nisi pretium ut tortor curabitur massa ut massa auctor pellentesque."
+    question: "Do you run Google & Meta Ads?",
+    answer: "Yes, we can also help with your Google & Meta Ads. We have the expertise to create and manage your campaigns to maximize your ROI."
   },
   {
-    question: "What certifications does your team have?",
-    answer: "Lorem ipsum dolor sit amet consectetur aliquet tortor at cursus nisi placerat nisi pretium ut tortor curabitur massa ut massa auctor pellentesque."
+    question: "What industries do you work with?",
+    answer: "We work with various industries. Whether you’re a startup, local business, restaurant, school, hospital, retail, or growing brands across all industries."
   },
   {
-    question: "What’s the typical timeline for a campaign?",
-    answer: "Lorem ipsum dolor sit amet consectetur aliquet tortor at cursus nisi placerat nisi pretium ut tortor curabitur massa ut massa auctor pellentesque."
+    question: "How do I get started?",
+    answer: "Simply contact us through our website. We can discuss what you want to achieve and find out the best way to help you."
   }
 ]
 
@@ -38,7 +38,7 @@ export default function FAQ() {
             Have questions?
           </h2>
           <p className="text-neutral-500 text-[15px] md:text-base max-w-[420px] mx-auto leading-relaxed">
-            Lorem ipsum dolor sit amet consectetur neque blandit sit iaculis rhoncus in ac volutpat a tortor nulla donec et.
+Here’s what most people ask before we get started.
           </p>
         </div>
 
