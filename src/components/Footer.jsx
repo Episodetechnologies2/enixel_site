@@ -30,7 +30,7 @@ export default function Footer() {
             {/* Social Links */}
             <div className="flex items-center space-x-3">
               <a 
-                href="https://facebook.com" 
+                href="https://www.facebook.com/profile.php?id=61592600500190" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="w-10 h-10 rounded-full border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white hover:bg-neutral-800 hover:border-neutral-700 transition-all duration-300"
@@ -38,7 +38,7 @@ export default function Footer() {
                 <FaFacebookF className="w-[16px] h-[16px]" />
               </a>
               <a 
-                href="https://twitter.com" 
+                href="https://x.com/EnixelSocial" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="w-10 h-10 rounded-full border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white hover:bg-neutral-800 hover:border-neutral-700 transition-all duration-300"
@@ -46,7 +46,7 @@ export default function Footer() {
                 <FaXTwitter className="w-[16px] h-[16px]" />
               </a>
               <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/enixel_social/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="w-10 h-10 rounded-full border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white hover:bg-neutral-800 hover:border-neutral-700 transition-all duration-300"
@@ -54,7 +54,7 @@ export default function Footer() {
                 <FaInstagram className="w-[16px] h-[16px]" />
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/enixel-social-b20101429/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="w-10 h-10 rounded-full border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white hover:bg-neutral-800 hover:border-neutral-700 transition-all duration-300"
@@ -95,11 +95,11 @@ export default function Footer() {
             <div className="flex flex-col space-y-3 text-[15px] text-neutral-400">
               <a href="mailto:info@enixel.com" className="flex items-center gap-2 hover:text-white transition-colors w-fit">
                 <Mail className="w-4 h-4 text-brand-orange" />
-                <span>info@enixel.com</span>
+                <span>enixel.social@gmail.com</span>
               </a>
               <a href="tel:(123)456-7890" className="flex items-center gap-2 hover:text-white transition-colors w-fit">
                 <Phone className="w-4 h-4 text-brand-orange" />
-                <span>(123) 456 - 7890</span>
+                <span>+91 9500726263</span>
               </a>
             </div>
           </div>

@@ -505,7 +505,7 @@ export default function AboutPage() {
             {/* Floating Social Cards inside row */}
             <div className="absolute inset-0 flex justify-center items-center gap-2 sm:gap-4 px-4">
               <a 
-                href="https://facebook.com/" 
+                href="https://www.facebook.com/profile.php?id=61592600500190" 
                 target="_blank" 
                 rel="noreferrer" 
                 className="w-[22%] max-w-[130px] bg-white/80 border border-white rounded-custom-sm p-1.5 shadow-badge-orange backdrop-blur-sm transition-transform duration-300 hover:-translate-y-2 select-none -rotate-6 hover:rotate-0"
@@ -517,7 +517,7 @@ export default function AboutPage() {
                 />
               </a>
               <a 
-                href="https://x.com/" 
+                href="https://x.com/EnixelSocial" 
                 target="_blank" 
                 rel="noreferrer" 
                 className="w-[22%] max-w-[130px] bg-white/80 border border-white rounded-custom-sm p-1.5 shadow-badge-pink backdrop-blur-sm transition-transform duration-300 hover:-translate-y-2 select-none rotate-3 hover:rotate-0"
@@ -529,7 +529,7 @@ export default function AboutPage() {
                 />
               </a>
               <a 
-                href="https://linkedin.com/" 
+                href="https://www.linkedin.com/in/enixel-social-b20101429/" 
                 target="_blank" 
                 rel="noreferrer" 
                 className="w-[22%] max-w-[130px] bg-white/80 border border-white rounded-custom-sm p-1.5 shadow-badge-orange backdrop-blur-sm transition-transform duration-300 hover:-translate-y-2 select-none -rotate-3 hover:rotate-0"
@@ -541,14 +541,14 @@ export default function AboutPage() {
                 />
               </a>
               <a 
-                href="https://tiktok.com/" 
+                href="https://www.instagram.com/enixel_social/" 
                 target="_blank" 
                 rel="noreferrer" 
                 className="w-[22%] max-w-[130px] bg-white/80 border border-white rounded-custom-sm p-1.5 shadow-badge-pink backdrop-blur-sm transition-transform duration-300 hover:-translate-y-2 select-none rotate-6 hover:rotate-0"
               >
                 <img 
-                  src="https://cdn.prod.website-files.com/684b4517ecc745a3c5d4f2ea/689a334a25afef7f0cfcd650_tiktok-link-large-digigrowth-webflow-template.jpg" 
-                  alt="TikTok Link" 
+                  src="/instagram-link-large.jpg" 
+                  alt="Instagram Link" 
                   className="rounded-custom-sm w-full h-auto shadow-sm"
                 />
               </a>
